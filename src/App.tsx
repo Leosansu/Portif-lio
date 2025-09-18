@@ -23,30 +23,20 @@ function App() {
          <motion.a href="#contatos" className="btn-contatos" whileHover={{ scale: 1.1, backgroundColor: "#f7e9b0", color: "#a67c52" }} whileTap={{ scale: 0.95 }}>Contatos</motion.a>         
         </nav>
       </header>
-      <div>
-        <img src="/abajur.png" alt="Abajur de mesa" className="abajur-img"
-          style={{ filter: luzAcesa ? "brightness(1)" : "brightness(0.3)" }} />
-        <div className="caderno"
-          style={{ filter: luzAcesa ? "brightness(1)" : "brightness(0.3)" }}>
-          <img src="/espiralRecortado.jpg" alt="Espiral do caderno" className="espiral-img"
-            style={{ filter: luzAcesa ? "brightness(1)" : "brightness(0.9)" }} /> {/* menos escuro */}
-          <h1 style={{ filter: luzAcesa ? "brightness(1)" : "brightness(0.3)" }}>
-            Olá! Meu nome é Leonam Santorum
-          </h1>
-          <p style={{ filter: luzAcesa ? "brightness(1)" : "brightness(0.3)" }}>
-            Sou desenvolvedor Full Stack.
-          </p>
-        </div>
-      </div>
-      <div>
+      <div style={{ position: "relative", width: "100%", height: "100vh" }}>
+        {/* Luz direcional */}
+        <div
+          className="luz-direcional"
+          style={{
+            opacity: luzAcesa ? 1 : 0,
+            transition: "opacity 0.5s"
+          }}
+        />
+        <img src="/abajur.png" alt="Abajur de mesa" className="abajur-img" />
         <button
           className="botao-abajur-img"
           onClick={() => setLuzAcesa(!luzAcesa)}
-          style={{
-            background: "transparent",
-            border: "none",
-            padding: 0
-          }}
+          style={{ background: "transparent", border: "none", padding: 0 }}
         >
           <img
             src="/botao_abajur.png"
@@ -59,6 +49,17 @@ function App() {
             }}
           />
         </button>
+        <div className="caderno"
+          style={{ filter: luzAcesa ? "brightness(1)" : "brightness(0.3)" }}>
+          <img src="/espiralRecortado.jpg" alt="Espiral do caderno" className="espiral-img"
+            style={{ filter: luzAcesa ? "brightness(1)" : "brightness(0.9)" }} /> {/* menos escuro */}
+          <h1 style={{ filter: luzAcesa ? "brightness(1)" : "brightness(0.3)" }}>
+            Olá! Meu nome é Leonam Santorum
+          </h1>
+          <p style={{ filter: luzAcesa ? "brightness(1)" : "brightness(0.3)" }}>
+            Sou desenvolvedor Full Stack.
+          </p>
+        </div>
       </div>
     </>
   )
