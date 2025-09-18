@@ -20,6 +20,7 @@ body {
   /* border-left: 8px solid #c2b280; */
   font-family: 'Caveat', 'Comic Sans MS', cursive, sans-serif;
   overflow: hidden;
+  filter: brightness(0.5); /* mais escuro */
 }
 
 /* Linhas do caderno */
@@ -349,5 +350,17 @@ input:focus, textarea:focus, select:focus {
   z-index: 3;
   pointer-events: none;
   transform: rotate(140deg); /* rotaciona o abajur em sentido horário */
+  filter: brightness(0.5); /* mais escuro */
+}
+
+.penumbra-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0,0,0,0.6); /* mais escuro */
+  z-index: 0;
+  pointer-events: none;
 }
 

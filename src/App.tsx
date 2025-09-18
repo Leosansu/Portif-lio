@@ -4,6 +4,7 @@ import './App.css'
 function App() {
   return (
     <>
+      <div className="penumbra-overlay"></div>
       <header>
         <nav>
          <motion.a href="#home" className="btn-home" whileHover={{ scale: 1.1, backgroundColor: "#f7e9b0", color: "#a67c52" }} whileTap={{ scale: 0.95 }}>Home</motion.a>
