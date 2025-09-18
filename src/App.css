@@ -353,6 +353,17 @@ input:focus, textarea:focus, select:focus {
   filter: brightness(0.5); /* mais escuro */
 }
 
+.botao-abajur-img {
+  position: absolute;
+  left: 32px;
+  top: 140px;
+  width: 80px;
+  height: 52px;
+  object-fit: contain;
+  z-index: 10;
+  transform: rotate(-40deg); /* rotaciona em sentido anti-horário */
+}
+
 .penumbra-overlay {
   position: fixed;
   top: 0;

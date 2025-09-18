@@ -21,6 +21,9 @@ function App() {
           <p>Sou desenvolvedor Full Stack.</p>
         </div>
       </div>
+      <div>
+        <img src="/botao_abajur.png" alt="Botão do abajur" className="botao-abajur-img" />
+      </div>
     </>
   )
 }
