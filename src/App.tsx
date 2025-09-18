@@ -1,10 +1,20 @@
 import { motion } from 'framer-motion'
+import { useState } from "react";
 import './App.css'
 
 function App() {
+  const [luzAcesa, setLuzAcesa] = useState(false);
+
   return (
     <>
-      <div className="penumbra-overlay"></div>
+      <div
+        className="penumbra-overlay"
+        style={{
+          background: luzAcesa
+            ? "rgba(0,0,0,0.1)" // quase sem penumbra
+            : "rgba(0,0,0,0.6)" // penumbra escura
+        }}
+      ></div>
       <header>
         <nav>
          <motion.a href="#home" className="btn-home" whileHover={{ scale: 1.1, backgroundColor: "#f7e9b0", color: "#a67c52" }} whileTap={{ scale: 0.95 }}>Home</motion.a>
@@ -14,15 +24,31 @@ function App() {
         </nav>
       </header>
       <div>
-        <img src="/abajur.png" alt="Abajur de mesa" className="abajur-img" />
-        <div className="caderno">
-          <img src="/espiralRecortado.jpg" alt="Espiral do caderno" className="espiral-img" />
-          <h1>Olá! Meu nome é Leonam Santorum</h1>
-          <p>Sou desenvolvedor Full Stack.</p>
+        <img src="/abajur.png" alt="Abajur de mesa" className="abajur-img" style={{
+          filter: luzAcesa ? "brightness(1)" : "brightness(0.5)"
+        }} />
+        <div className="caderno" style={{
+          filter: luzAcesa ? "brightness(1)" : "brightness(0.5)"
+        }}>
+          <img src="/espiralRecortado.jpg" alt="Espiral do caderno" className="espiral-img" style={{
+            filter: luzAcesa ? "brightness(1)" : "brightness(0.5)"
+          }} />
+          <h1 style={{
+            filter: luzAcesa ? "brightness(1)" : "brightness(0.5)"
+          }}>Olá! Meu nome é Leonam Santorum</h1>
+          <p style={{
+            filter: luzAcesa ? "brightness(1)" : "brightness(0.5)"
+          }}>Sou desenvolvedor Full Stack.</p>
         </div>
       </div>
       <div>
-        <img src="/botao_abajur.png" alt="Botão do abajur" className="botao-abajur-img" />
+        <button
+          className="botao-abajur-img"
+          onClick={() => setLuzAcesa(!luzAcesa)}
+          style={{ background: "transparent", border: "none", padding: 0 }}
+        >
+          <img src="/botao_abajur.png" alt="Botão do abajur" />
+        </button>
       </div>
     </>
   )
