@@ -11,25 +11,17 @@ function App() {
         className="penumbra-overlay"
         style={{
           background: luzAcesa
-            ? "rgba(0,0,0,0.1)" // quase sem penumbra
-            : "rgba(0,0,0,0.6)" // penumbra escura
+            ? "rgba(0,0,0,0.35)" // luz acesa: ambiente ainda escuro fora do foco
+            : "rgba(0,0,0,0.6)"  // luz apagada: ambiente bem escuro
         }}
       ></div>
-      <header>
-        <nav>
-         <motion.a href="#home" className="btn-home" whileHover={{ scale: 1.1, backgroundColor: "#f7e9b0", color: "#a67c52" }} whileTap={{ scale: 0.95 }}>Home</motion.a>
-         <motion.a href="#sobre" className="btn-sobre" whileHover={{ scale: 1.1, backgroundColor: "#f7e9b0", color: "#a67c52" }} whileTap={{ scale: 0.95 }}>Sobre</motion.a>
-         <motion.a href="#projetos" className="btn-projetos" whileHover={{ scale: 1.1, backgroundColor: "#f7e9b0", color: "#a67c52" }} whileTap={{ scale: 0.95 }}>Projetos</motion.a>
-         <motion.a href="#contatos" className="btn-contatos" whileHover={{ scale: 1.1, backgroundColor: "#f7e9b0", color: "#a67c52" }} whileTap={{ scale: 0.95 }}>Contatos</motion.a>         
-        </nav>
-      </header>
       <div style={{ position: "relative", width: "100%", height: "100vh" }}>
         {/* Luz direcional */}
         <div
           className="luz-direcional"
           style={{
-            opacity: luzAcesa ? 1 : 0,
-            transition: "opacity 0.5s"
+            opacity: luzAcesa ? 1 : 0
+            // Removido o transition para efeito instantâneo
           }}
         />
         <img src="/abajur.png" alt="Abajur de mesa" className="abajur-img" />
@@ -49,6 +41,7 @@ function App() {
             }}
           />
         </button>
+
         <div className="caderno"
           style={{ filter: luzAcesa ? "brightness(1)" : "brightness(0.3)" }}>
           <img src="/espiralRecortado.jpg" alt="Espiral do caderno" className="espiral-img"
@@ -60,6 +53,11 @@ function App() {
             Sou desenvolvedor Full Stack.
           </p>
         </div>
+        <nav className="marcadores-horizontal">
+          <a href="#sobre" className="marcador-horizontal">Sobre</a>
+          <a href="#projetos" className="marcador-horizontal">Projetos</a>
+          <a href="#contatos" className="marcador-horizontal">Contatos</a>
+        </nav>
       </div>
     </>
   )
