@@ -1,0 +1,353 @@
+/* Fundo geral da página, cor de papel */
+body {
+  background: url('/mesa-de-madeira.jpg') center center / cover no-repeat;
+  min-height: 100vh;
+  margin: 0;
+  font-family: 'Caveat', 'Comic Sans MS', cursive, sans-serif;
+}
+
+/* Área do caderno */
+.caderno {
+  max-width: 600px;
+  height: 70vh;
+  margin: 80px auto 32px 180px; /* aumenta o espaço à esquerda */
+  background: #fffbe6;
+  border-radius: 24px;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.15); /* Removido o contorno colorido */
+  padding: 12px 8px;
+  position: relative;
+  /* Remova ou ajuste a linha abaixo se não quiser a lombada */
+  /* border-left: 8px solid #c2b280; */
+  font-family: 'Caveat', 'Comic Sans MS', cursive, sans-serif;
+  overflow: hidden;
+}
+
+/* Linhas do caderno */
+.caderno::before {
+  content: "";
+  position: absolute;
+  top: 22px;           /* começa mais próximo do topo */
+  left: 24px;          /* mais próximo da borda esquerda */
+  right: 24px;         /* mais próximo da borda direita */
+  height: calc(100% - 32px); /* ocupa quase toda a altura do caderno */
+  background: repeating-linear-gradient(
+    to bottom,
+    #f7e9b0 0px,
+    #f7e9b0 1px,
+    transparent 2px,
+    transparent 22px   /* mantém o espaço entre as linhas */
+  );
+  z-index: 0;
+  pointer-events: none;
+  border-radius: 16px;
+}
+
+.caderno::after {
+  content: "";
+  position: absolute;
+  top: 24px;
+  right: -12px;
+  width: 18px;
+  height: calc(100% - 48px);
+  background: repeating-linear-gradient(
+    to bottom,
+    #fffbe6 0px,
+    #fffbe6 10px,
+    #e0c97f 12px,
+    #fffbe6 14px
+  );
+  border-radius: 8px;
+  box-shadow: 2px 0 8px rgba(0,0,0,0.08);
+  z-index: 1;
+  opacity: 0.7;
+}
+
+/* Header fixo no topo */
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: #c2b280;
+  padding: 10px 0;
+  z-index: 1000;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
+
+/* Navegação centralizada */
+nav {
+  display: flex;
+  gap: 24px;
+  justify-content: center;
+}
+
+/* Botões do menu */
+nav a, .btn-home, .btn-sobre, .btn-projetos, .btn-contatos {
+  text-decoration: none;
+  color: #5d4638;
+  font-weight: bold;
+  background: #fffbe6;
+  border: 1px solid #e0c97f;
+  border-radius: 12px;
+  padding: 8px 16px;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.08);
+  font-family: 'Caveat', 'Comic Sans MS', cursive;
+  transition: background 0.2s, color 0.2s, transform 0.2s;
+}
+
+nav a:hover, .btn-home:hover, .btn-sobre:hover, .btn-projetos:hover, .btn-contatos:hover {
+  background: #f7e9b0;
+  color: #a67c52;
+  transform: scale(1.08);
+}
+
+/* Estilo para o rodapé */
+footer {
+  background: #c2b280;
+  color: #5d4638;
+  text-align: center;
+  padding: 20px 0;
+  position: relative;
+  z-index: 1000;
+  box-shadow: 0 -2px 8px rgba(0,0,0,0.08);
+  border-top: 8px solid #e0c97f;
+}
+
+/* Links do rodapé */
+footer a {
+  color: #5d4638;
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.2s;
+}
+
+footer a:hover {
+  color: #a67c52;
+}
+
+/* Estilo para as seções */
+section {
+  margin: 40px 0;
+}
+
+/* Títulos das seções */
+section h2 {
+  font-family: 'Caveat', 'Comic Sans MS', cursive;
+  font-size: 28px;
+  color: #5d4638;
+  border-bottom: 2px solid #e0c97f;
+  padding-bottom: 8px;
+}
+
+/* Parágrafos */
+p {
+  line-height: 1.6;
+  margin: 16px 0;
+  color: #333;
+}
+
+/* Código */
+code {
+  font-family: 'Courier New', Courier, monospace;
+  background: #f4f4f4;
+  padding: 2px 4px;
+  border-radius: 4px;
+}
+
+/* Tabelas */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 16px 0;
+}
+
+th, td {
+  border: 1px solid #e0c97f;
+  padding: 8px;
+  text-align: left;
+}
+
+th {
+  background: #f7e9b0;
+  font-weight: bold;
+}
+
+/* Imagens responsivas */
+img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 12px;
+}
+
+/* Estilo para os botões principais */
+.btn-principal {
+  display: inline-block;
+  text-decoration: none;
+  color: #fff;
+  background: #5d4638;
+  padding: 12px 24px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  transition: background 0.3s, transform 0.3s;
+}
+
+.btn-principal:hover {
+  background: #a67c52;
+  transform: translateY(-2px);
+}
+
+/* Estilo para os formulários */
+form {
+  background: #fff;
+  padding: 24px;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  margin: 16px 0;
+}
+
+label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: bold;
+  color: #5d4638;
+}
+
+input, textarea, select {
+  width: 100%;
+  padding: 12px;
+  margin: 8px 0 16px 0;
+  border: 1px solid #e0c97f;
+  border-radius: 8px;
+  font-family: 'Courier New', Courier, monospace;
+}
+
+input:focus, textarea:focus, select:focus {
+  border-color: #5d4638;
+  outline: none;
+  box-shadow: 0 0 8px rgba(93,70,56,0.2);
+}
+
+/* Estilo para as mensagens de sucesso e erro */
+.mensagem {
+  padding: 12px;
+  border-radius: 8px;
+  margin: 16px 0;
+}
+
+.mensagem.sucesso {
+  background: #d4edda;
+  color: #155724;
+  border: 1px solid #c3e6cb;
+}
+
+.mensagem.erro {
+  background: #f8d7da;
+  color: #721c24;
+  border: 1px solid #f5c6cb;
+}
+
+/* Estilo para os ícones */
+.icon {
+  display: inline-block;
+  width: 24px;
+  height: 24px;
+  margin-right: 8px;
+  vertical-align: middle;
+  fill: currentColor;
+}
+
+/* Estilo para as animações */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.fade-in {
+  animation: fadeIn 0.5s ease-out;
+}
+
+/* Estilo para os elementos ocultos */
+.hidden {
+  display: none;
+}
+
+/* Estilo para os elementos visíveis */
+.visible {
+  display: block;
+}
+
+/* Estilo para os elementos do caderno */
+.caderno h1, .caderno p {
+  font-family: 'Caveat', 'Comic Sans MS', cursive, sans-serif;
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+.caderno h1 {
+  font-family: 'Caveat', 'Comic Sans MS', cursive, sans-serif;
+  font-size: 1.3rem; /* diminua o valor para ajustar o tamanho */
+  font-weight: 700;
+  line-height: 1.1;
+  position: relative;
+  z-index: 1;
+}
+
+.caderno p {
+  font-family: 'Caveat', 'Comic Sans MS', cursive, sans-serif;
+  font-size: 1.3rem; /* igual ao h1 */
+  font-weight: 700;
+  line-height: 1.1;
+  position: relative;
+  z-index: 1;
+  margin: 0; /* opcional: remove espaço extra */
+}
+
+.espiral {
+  position: absolute;
+  left: 50%;
+  top: 40px;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  z-index: 2;
+  height: calc(100% - 80px);
+  justify-content: space-between;
+  pointer-events: none;
+}
+
+.espiral-furo {
+  width: 16px;
+  height: 16px;
+  background: #c2b280;
+  border: 2px solid #a67c52;
+  border-radius: 50%;
+  margin: 2px 0;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.15);
+}
+
+.espiral-img {
+  display: block;
+  margin: 0 auto;
+  width: 30px;
+  height: auto;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  z-index: 2;
+  clip-path: inset(10px 0 0 0); /* corta 15px do topo */
+}
+
+.abajur-img {
+  position: absolute;
+  left: 10px;    /* mais à esquerda */
+  top: 80px;     /* mais para cima */
+  width: 290px;
+  height: auto;
+  z-index: 3;
+  pointer-events: none;
+  transform: rotate(140deg); /* rotaciona o abajur em sentido horário */
+}
+
