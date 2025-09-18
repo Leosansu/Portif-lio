@@ -361,13 +361,10 @@ input:focus, textarea:focus, select:focus {
   height: 52px;
   object-fit: contain;
   z-index: 10;
-  transform: rotate(-40deg);
   background: transparent;
   border: none;
   padding: 0;
   cursor: pointer;
-  box-shadow: 0 0 16px 6px #fffacd, 0 0 32px 12px #ffe066;
-  transition: box-shadow 0.3s;
 }
 
 .botao-abajur-img img {
@@ -375,6 +372,9 @@ input:focus, textarea:focus, select:focus {
   height: 100%;
   object-fit: contain;
   display: block;
+  /* Luminescência retangular e menor */
+  filter: drop-shadow(0 0 8px #ffe066) drop-shadow(0 0 4px #fffacd);
+  transition: filter 0.3s;
 }
 
 .caderno,
@@ -467,13 +467,10 @@ input:focus, textarea:focus, select:focus {
   height: 52px;
   object-fit: contain;
   z-index: 10;
-  transform: rotate(-40deg);
   background: transparent;
   border: none;
   padding: 0;
   cursor: pointer;
-  box-shadow: 0 0 16px 6px #fffacd, 0 0 32px 12px #ffe066;
-  transition: box-shadow 0.3s;
 }
 
 .botao-abajur-img img {
@@ -481,6 +478,9 @@ input:focus, textarea:focus, select:focus {
   height: 100%;
   object-fit: contain;
   display: block;
+  /* Luminescência retangular e menor */
+  filter: drop-shadow(0 0 8px #ffe066) drop-shadow(0 0 4px #fffacd);
+  transition: filter 0.3s;
 }
 
 .penumbra-overlay {

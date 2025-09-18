@@ -45,13 +45,19 @@ function App() {
           style={{
             background: "transparent",
             border: "none",
-            padding: 0,
-            boxShadow: !luzAcesa
-              ? "0 0 16px 6px #fffacd, 0 0 32px 12px #ffe066"
-              : "none"
+            padding: 0
           }}
         >
-          <img src="/botao_abajur.png" alt="Botão do abajur" />
+          <img
+            src="/botao_abajur.png"
+            alt="Botão do abajur"
+            style={{
+              filter: !luzAcesa
+                ? "drop-shadow(0 0 8px #ffe066) drop-shadow(0 0 4px #fffacd)"
+                : "none",
+              transform: "rotate(-40deg)"
+            }}
+          />
         </button>
       </div>
     </>
