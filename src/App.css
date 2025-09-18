@@ -366,6 +366,8 @@ input:focus, textarea:focus, select:focus {
   border: none;
   padding: 0;
   cursor: pointer;
+  box-shadow: 0 0 16px 6px #fffacd, 0 0 32px 12px #ffe066;
+  transition: box-shadow 0.3s;
 }
 
 .botao-abajur-img img {
@@ -470,6 +472,8 @@ input:focus, textarea:focus, select:focus {
   border: none;
   padding: 0;
   cursor: pointer;
+  box-shadow: 0 0 16px 6px #fffacd, 0 0 32px 12px #ffe066;
+  transition: box-shadow 0.3s;
 }
 
 .botao-abajur-img img {

@@ -24,28 +24,32 @@ function App() {
         </nav>
       </header>
       <div>
-        <img src="/abajur.png" alt="Abajur de mesa" className="abajur-img" style={{
-          filter: luzAcesa ? "brightness(1)" : "brightness(0.5)"
-        }} />
-        <div className="caderno" style={{
-          filter: luzAcesa ? "brightness(1)" : "brightness(0.5)"
-        }}>
-          <img src="/espiralRecortado.jpg" alt="Espiral do caderno" className="espiral-img" style={{
-            filter: luzAcesa ? "brightness(1)" : "brightness(0.5)"
-          }} />
-          <h1 style={{
-            filter: luzAcesa ? "brightness(1)" : "brightness(0.5)"
-          }}>Olá! Meu nome é Leonam Santorum</h1>
-          <p style={{
-            filter: luzAcesa ? "brightness(1)" : "brightness(0.5)"
-          }}>Sou desenvolvedor Full Stack.</p>
+        <img src="/abajur.png" alt="Abajur de mesa" className="abajur-img"
+          style={{ filter: luzAcesa ? "brightness(1)" : "brightness(0.3)" }} />
+        <div className="caderno"
+          style={{ filter: luzAcesa ? "brightness(1)" : "brightness(0.3)" }}>
+          <img src="/espiralRecortado.jpg" alt="Espiral do caderno" className="espiral-img"
+            style={{ filter: luzAcesa ? "brightness(1)" : "brightness(0.9)" }} /> {/* menos escuro */}
+          <h1 style={{ filter: luzAcesa ? "brightness(1)" : "brightness(0.3)" }}>
+            Olá! Meu nome é Leonam Santorum
+          </h1>
+          <p style={{ filter: luzAcesa ? "brightness(1)" : "brightness(0.3)" }}>
+            Sou desenvolvedor Full Stack.
+          </p>
         </div>
       </div>
       <div>
         <button
           className="botao-abajur-img"
           onClick={() => setLuzAcesa(!luzAcesa)}
-          style={{ background: "transparent", border: "none", padding: 0 }}
+          style={{
+            background: "transparent",
+            border: "none",
+            padding: 0,
+            boxShadow: !luzAcesa
+              ? "0 0 16px 6px #fffacd, 0 0 32px 12px #ffe066"
+              : "none"
+          }}
         >
           <img src="/botao_abajur.png" alt="Botão do abajur" />
         </button>
