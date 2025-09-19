@@ -38,15 +38,21 @@ function App() {
         </button>
 
         <div className="caderno" style={{ filter: luzAcesa ? "brightness(1)" : "brightness(0.3)" }}>
-          <img src="/espiralRecortado.jpg" alt="Espiral do caderno" className="espiral-img"
-            style={{ filter: luzAcesa ? "brightness(1)" : "brightness(0.9)" }} />
-          <h1 style={{ filter: luzAcesa ? "brightness(1)" : "brightness(0.3)" }}>
+          <img src="/espiralRecortado.jpg" 
+               alt="Espiral do caderno" 
+               className="espiral-img"
+               style={{ filter: luzAcesa ? "brightness(1)" : "brightness(1.6)" }} />
+          <h1 style={{ filter: luzAcesa ? "brightness(1)" : "brightness(1.6)" }}>
             Olá! Meu nome é Leonam Santorum
           </h1>
           <p style={{ filter: luzAcesa ? "brightness(1)" : "brightness(0.3)" }}>
             Sou desenvolvedor Full Stack.
           </p>
 
+          <p className="intro" style={{ filter: luzAcesa ? "brightness(1)" : "brightness(0.3)" }}>
+            Bem-vindo ao meu portifólio, nesse caderno há <br />um pouco de mim.
+          </p>
+          
           {/* Marcadores (cada um posicionado individualmente) */}
           <a href="#sobre" className="marcador-sobre">Sobre</a>
           <a href="#projetos" className="marcador-projetos">Projetos</a>

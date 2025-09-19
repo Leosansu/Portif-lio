@@ -255,6 +255,15 @@ label {
   margin: 0; /* opcional: remove espaço extra */
 }
 
+.caderno p.intro {
+  font-size: 1rem;     /* valor que desejar (ex.: 0.9rem a 1rem) */
+  line-height: 1.25;
+  margin-top: 8px;
+  color: inherit;
+  font-weight: 700;
+  text-align: left;
+}
+
 
 
 .espiral-img {
@@ -547,6 +556,7 @@ label {
   z-index: 1050;
   pointer-events: auto;
 }
+
 
 
 
