@@ -1,9 +1,16 @@
 /* Fundo geral da página, cor de papel */
 body {
-  background: url('/mesa-de-madeira.jpg') center center / cover no-repeat;
-  min-height: 100vh;
   margin: 0;
   font-family: 'Caveat', 'Comic Sans MS', cursive, sans-serif;
+}
+
+/* Imagem de fundo da mesa */
+.mesa-fundo {
+  position: fixed;
+  inset: 0;
+  background: url('/mesa-de-madeira.jpg') center center / cover no-repeat;
+  z-index: -1;         /* fica atrás de todo o conteúdo */
+  pointer-events: none;
 }
 
 /* Área do caderno */
