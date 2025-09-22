@@ -513,7 +513,7 @@ label {
 .marcador-sobre {
   position: absolute;
   top: 52px;
-  right: -35px;        /* mais para fora */
+  right: -40px;        /* mais para fora */
   background: #ffe066;
   color: #a67c52;
   padding: 4px 12px;
@@ -529,7 +529,7 @@ label {
 .marcador-projetos {
   position: absolute;
   top: 86px;
-  right: -50px;
+  right: -61px;
   background: #ffe066;
   color: #a67c52;
   padding: 4px 12px;
@@ -545,7 +545,7 @@ label {
 .marcador-contatos {
   position: absolute;
   top: 120px;
-  right: -55px;
+  right: -65px;
   background: #ffe066;
   color: #a67c52;
   padding: 4px 12px;
@@ -555,6 +555,13 @@ label {
   transform: rotate(0deg);
   z-index: 1050;
   pointer-events: auto;
+}
+
+.marcador-sobre,
+.marcador-projetos,
+.marcador-contatos {
+  border-radius: 0 12px 12px 0; /* esquerdo reto, direito arredondado */
+  transform: none;              /* remove rotação para ficar paralelo */
 }
 
 
