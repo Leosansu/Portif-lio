@@ -1,4 +1,5 @@
 import React from 'react';
+import BotaoAbajur from './BotaoAbajur';
 
 export default function Abajur({
   luzAcesa,
@@ -10,23 +11,7 @@ export default function Abajur({
   return (
     <>
       <img src="/abajur.png" alt="Abajur de mesa" className="abajur-img" />
-      <button
-        className="botao-abajur-img"
-        onClick={() => setLuzAcesa(!luzAcesa)}
-        style={{ background: 'transparent', border: 'none', padding: 0 }}
-        aria-label={luzAcesa ? 'Desligar luz' : 'Ligar luz'}
-      >
-        <img
-          src="/botao_abajur.png"
-          alt="Botão do abajur"
-          style={{
-            filter: !luzAcesa
-              ? 'drop-shadow(0 0 8px #ffe066) drop-shadow(0 0 4px #fffacd)'
-              : 'none',
-            transform: 'rotate(-40deg)'
-          }}
-        />
-      </button>
+      <BotaoAbajur luzAcesa={luzAcesa} onClick={() => setLuzAcesa(!luzAcesa)} />
     </>
   );
 }
