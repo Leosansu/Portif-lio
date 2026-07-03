@@ -1,0 +1,29 @@
+.marcadorSobre {
+  display: block;
+  position: absolute;
+  top: 70px;
+  right: -40px;
+
+  background: #ffe066;
+  color: #a67c52;
+  padding: 4px 12px;
+  font-size: 0.85rem;
+  font-family: 'Caveat', 'Comic Sans MS', cursive, sans-serif;
+  font-weight: bold;
+
+  border: 1px solid #e0c97f;
+  border-radius: 0 12px 12px 0;
+  box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.08);
+  text-decoration: none;
+  cursor: pointer;
+
+  z-index: 1100;
+  pointer-events: auto;
+  transition: background 0.2s, color 0.2s, transform 0.2s;
+}
+
+.marcadorSobre:hover {
+  background: #f7e9b0;
+  color: #5d4638;
+  transform: scale(1.08);
+}

@@ -6,7 +6,8 @@ import Mesa from '../components/Mesa'
 export default function PgPrincipal({
   luzAcesa,
   setLuzAcesa
-}: { luzAcesa: boolean
+}: {
+  luzAcesa: boolean
   setLuzAcesa: React.Dispatch<React.SetStateAction<boolean>>
 }) {
   return (
@@ -25,17 +26,7 @@ export default function PgPrincipal({
 
         <Abajur luzAcesa={luzAcesa} setLuzAcesa={setLuzAcesa} />
 
-        <Caderno luzAcesa={luzAcesa}>
-          <h1 style={{ filter: luzAcesa ? 'brightness(1)' : 'brightness(1.6)' }}>
-            Olá! Meu nome é Leonam Santorum
-          </h1>
-          <p style={{ filter: luzAcesa ? 'brightness(1)' : 'brightness(0.3)' }}>
-            Sou desenvolvedor Full Stack.
-          </p>
-          <p className="intro" style={{ filter: luzAcesa ? 'brightness(1)' : 'brightness(0.3)' }}>
-            Bem-vindo ao meu portifólio, nesse caderno há <br />um pouco de mim.
-          </p>
-        </Caderno>
+        <Caderno luzAcesa={luzAcesa} />
       </div>
     </>
   )

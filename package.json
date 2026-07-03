@@ -10,7 +10,9 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@types/page-flip": "^2.0.4",
     "framer-motion": "^12.23.13",
+    "page-flip": "^2.0.7",
     "react": "^19.1.1",
     "react-dom": "^19.1.1"
   },

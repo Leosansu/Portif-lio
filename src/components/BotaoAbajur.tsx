@@ -1,5 +1,3 @@
-import React from 'react';
-
 type BotaoAbajurProps = {
   luzAcesa: boolean;
   onClick: () => void;
