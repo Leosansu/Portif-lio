@@ -3,6 +3,10 @@ import Abajur from '../components/Abajur'
 import Caderno from '../components/Caderno'
 import Mesa from '../components/Mesa'
 
+/*Objetivo : esse app deve conter uma mesa, um abajur e um caderno, contendo incialmente 3 páginas.
+-A pg principal dev conter uma introdução do que se trata o caderno.Compõe a cena (mesa + abajur + caderno)
+
+*/
 export default function PgPrincipal({
   luzAcesa,
   setLuzAcesa
