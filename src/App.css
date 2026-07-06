@@ -30,7 +30,7 @@ body {
 
 .luz-direcional {
   position: absolute;
-  left: clamp(-60px, -2vw, 0px);
+  left: clamp(120px, 16vw, 240px);
   top: clamp(60px, 10vh, 140px);
   width: clamp(200px, 28vw, 380px);
   height: clamp(200px, 28vw, 380px);
@@ -52,10 +52,10 @@ body {
 .abajur-wrapper {
   position: absolute;
   left: 0;
-  top: 0;
-  width: clamp(160px, 22vw, 290px);
+  top: clamp(80px, 12vh, 180px);
+  width: clamp(230px, 36vw, 480px);
   pointer-events: none;
-  z-index: 3;
+  z-index: 5;
 }
 
 .abajur-img {
@@ -70,8 +70,8 @@ body {
 
 .botao-abajur-img {
   position: absolute;
-  left: 11%;
-  top: clamp(49px, 6.83vw, 90px);
+  left: 7%;
+  top: clamp(35px, 5.5vw, 73px);
   width: 28%;
   height: auto;
   object-fit: contain;
@@ -98,7 +98,7 @@ body {
 .caderno-outer {
   max-width: 600px;
   height: 78vh;
-  margin: 80px clamp(16px, 4vw, 32px) 32px clamp(160px, 24vw, 300px);
+  margin: 80px clamp(16px, 4vw, 32px) 32px clamp(153px, 24vw, 320px);
   position: relative;
   z-index: 4;
   overflow: visible; /* permite marcadores saírem pela lateral */
@@ -177,34 +177,46 @@ body {
 .pagina-conteudo {
   position: relative;
   z-index: 1;
-  padding: 20px 16px;
+  padding: 20px calc(50% + 24px) 20px 16px; /* margem direita respeita o espiral */
 }
 
 .pagina h1 {
-  font-size: 1.3rem;
+  font-size: clamp(0.85rem, 2.2vw, 1.3rem);
   font-weight: 700;
   line-height: 1.2;
   margin: 0 0 8px 0;
 }
 
 .pagina h2 {
-  font-size: 1.2rem;
+  font-size: clamp(0.8rem, 2vw, 1.2rem);
   font-weight: 700;
   line-height: 1.2;
   margin: 0 0 8px 0;
 }
 
 .pagina p {
-  font-size: 1rem;
+  font-size: clamp(0.7rem, 1.6vw, 1rem);
   font-weight: 700;
-  line-height: 1.25;
+  line-height: 1.4;
   margin: 0;
 }
 
 .pagina p.intro {
-  font-size: 0.95rem;
+  font-size: clamp(0.68rem, 1.5vw, 0.95rem);
   margin-top: 8px;
   font-weight: 700;
+}
+
+.pagina ul {
+  margin: 8px 0 0 0;
+  padding-left: 18px;
+}
+
+.pagina li {
+  font-size: clamp(0.68rem, 1.5vw, 0.95rem);
+  font-family: 'Caveat', 'Comic Sans MS', cursive;
+  font-weight: 700;
+  line-height: 1.6;
 }
 
 /* ============================================
@@ -364,38 +376,36 @@ label { display: block; margin-bottom: 8px; font-weight: bold; color: #5d4638; }
 .visible { display: block; }
 
 /* ============================================
-   Responsividade
+   Responsividade — mobile (layout empilhado)
    ============================================ */
-@media (max-width: 768px) {
+@media (max-width: 680px) {
+  /* Abajur vai para o topo, centralizado */
+  .abajur-wrapper {
+    width: 65vw;
+    top: -45vw;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  /* Botão mantém proporção dentro do wrapper */
+  .botao-abajur-img {
+    top: 15%;
+    left: 7%;
+    width: 28%;
+  }
+
+  /* Caderno desce para dar espaço ao abajur */
   .caderno-outer {
-    margin: 70px auto 32px auto;
+    margin: 55vw auto 32px auto;
     width: calc(100% - 32px);
     max-width: none;
-    height: 70vh;
+    height: 60vh;
   }
 
-  .abajur-wrapper {
-    width: 150px;
-    top: 10px;
-    left: -10px;
-  }
-
-  .botao-abajur-img {
-    top: clamp(30px, 4.5vw, 50px);
-  }
-
+  /* Foco da luz acompanha abajur centralizado */
   .luz-direcional {
-    left: 30px;
-    top: 50px;
-  }
-}
-
-@media (max-width: 480px) {
-  .abajur-wrapper { width: 110px; }
-
-  .caderno-outer {
-    border-radius: 16px;
-    margin-top: 60px;
-    height: 65vh;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 5vw;
   }
 }

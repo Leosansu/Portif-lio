@@ -3,11 +3,12 @@ import { AnimatePresence, motion } from 'framer-motion';
 import MarcadorSobre from './marcadores/MarcadorSobre';
 import MarcadorProjetos from './marcadores/MarcadorProjetos';
 import MarcadorContatos from './marcadores/MarcadorContatos';
+import PaginaIntroducao from './paginas/PaginaIntroducao';
 import PaginaSobre from './paginas/PaginaSobre';
 import PaginaProjetos from './paginas/PaginaProjetos';
 import PaginaContatos from './paginas/PaginaContatos';
 
-const paginas = [PaginaSobre, PaginaProjetos, PaginaContatos];
+const paginas = [PaginaIntroducao, PaginaSobre, PaginaProjetos, PaginaContatos];
 
 const variantesPagina = {
   entrada: (d: number) => ({ rotateY: d > 0 ? 90 : -90, opacity: 0 }),
@@ -32,9 +33,9 @@ export default function Caderno({ luzAcesa }: { luzAcesa: boolean }) {
       className="caderno-outer"
       style={{ filter: luzAcesa ? 'brightness(1)' : 'brightness(0.3)' }}
     >
-      <MarcadorSobre    onClick={() => virarPara(0)} />
-      <MarcadorProjetos onClick={() => virarPara(1)} />
-      <MarcadorContatos onClick={() => virarPara(2)} />
+      <MarcadorSobre    onClick={() => virarPara(1)} />
+      <MarcadorProjetos onClick={() => virarPara(2)} />
+      <MarcadorContatos onClick={() => virarPara(3)} />
 
       <div className="caderno-inner">
         <img
