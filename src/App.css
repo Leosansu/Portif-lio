@@ -402,10 +402,15 @@ label { display: block; margin-bottom: 8px; font-weight: bold; color: #5d4638; }
     height: 60vh;
   }
 
-  /* Foco da luz acompanha abajur centralizado */
+  /* Foco da luz acompanha abajur centralizado.
+     Espelha a proporção do desktop: centro a ~83% da largura do abajur
+     (lado direito da base) e tamanho ~78% do abajur (65vw → 51vw). */
   .luz-direcional {
-    left: 50%;
-    transform: translateX(-50%);
-    top: 5vw;
+    left: calc(50% - 4vw);
+    transform: none;
+    top: -32vw;
+    width: 51vw;
+    height: 51vw;
+    z-index: 3; /* acima da mesa, abaixo do abajur (5): o abajur cobre o topo do foco */
   }
 }
