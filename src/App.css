@@ -19,10 +19,7 @@ body {
 
 .penumbra-overlay {
   position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
+  inset: 0;
   background: rgba(0,0,0,0.6);
   z-index: 0;
   pointer-events: none;
@@ -225,7 +222,7 @@ body {
 .marcador-projetos {
   position: absolute;
   top: 86px;
-  right: -61px;
+  left: 100%;
   background: #ffe066;
   color: #a67c52;
   padding: 4px 12px;
@@ -250,7 +247,7 @@ body {
 .marcador-contatos {
   position: absolute;
   top: 120px;
-  right: -65px;
+  left: 100%;
   background: #ffe066;
   color: #a67c52;
   padding: 4px 12px;
