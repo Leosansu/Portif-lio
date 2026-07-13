@@ -11,18 +11,15 @@ import PaginaContatos from './paginas/PaginaContatos';
 const paginas = [PaginaIntroducao, PaginaSobre, PaginaProjetos, PaginaContatos];
 
 const variantesPagina = {
-  entrada: (d: number) => ({ rotateY: d > 0 ? 90 : -90, opacity: 0 }),
-  centro: { rotateY: 0, opacity: 1 },
-  saida:  (d: number) => ({ rotateY: d > 0 ? -90 : 90, opacity: 0 }),
+  entrada: { rotateY: 180 }, // folha começa deitada à direita (mostrando o verso)
+  centro:  { rotateY: 0 },   // atravessa a espiral e assenta à esquerda (conteúdo)
 };
 
 export default function Caderno({ luzAcesa }: { luzAcesa: boolean }) {
   const [paginaAtual, setPaginaAtual] = useState(0);
-  const [direcao, setDirecao] = useState(1);
 
   const virarPara = (indice: number) => {
     if (indice === paginaAtual) return;
-    setDirecao(indice > paginaAtual ? 1 : -1);
     setPaginaAtual(indice);
   };
 
@@ -46,18 +43,27 @@ export default function Caderno({ luzAcesa }: { luzAcesa: boolean }) {
         />
 
         <div className="caderno-perspectiva">
-          <AnimatePresence mode="wait" custom={direcao}>
+          <AnimatePresence>
             <motion.div
               key={paginaAtual}
-              custom={direcao}
               variants={variantesPagina}
               initial="entrada"
               animate="centro"
-              exit="saida"
               transition={{ duration: 0.5, ease: 'easeInOut' }}
-              style={{ perspective: 1200, width: '100%', height: '100%', position: 'absolute', top: 0, left: 0 }}
+              style={{
+                width: '50%',
+                height: '100%',
+                position: 'absolute',
+                top: 0,
+                left: 0,
+                transformOrigin: 'right center',
+                transformStyle: 'preserve-3d',
+              }}
             >
-              <PaginaAtual />
+              <div className="pagina-face pagina-face--frente">
+                <PaginaAtual />
+              </div>
+              <div className="pagina-face pagina-face--verso" />
             </motion.div>
           </AnimatePresence>
         </div>
