@@ -158,6 +158,17 @@ body {
   z-index: 10;
 }
 
+/* Conteúdo da página anterior — fica parado à esquerda por baixo da folha
+   que vira, evitando que o texto suma antes da virada terminar */
+.pagina-estatica {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 50%;
+  height: 100%;
+  z-index: 1;
+}
+
 /* ============================================
    Faces da folha que vira (frente = conteúdo, verso = papel)
    ============================================ */
